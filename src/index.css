@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.accordion-content {
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+  }
+  .accordion-open {
+    max-height: 500px;  
+  }
+  .accordion-closed {
+    max-height: 0;
+  }
+  
