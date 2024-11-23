@@ -12,13 +12,14 @@ import Widgets from './page/pageScreen/Widgets';
 import Calenders from './page/pageScreen/Calenders';
 import Dashboard from './page/pageScreen/Dashboard';
 import { routeSubJudul } from './data/dataDami';
+import CardManageListing from './component/CardManageListing';
 
 
 const App = () => {
 
   return (
     <Routes>
-      <Route path='/table' element={<TableWord/>  } />
+      <Route path='/card' element={<CardManageListing/>  } />
       <Route path="/" element={<LayoutSidebar />}>
         <Route index element={<Dashboard />} />
         <Route path="/pages" element={<Pages />} />
