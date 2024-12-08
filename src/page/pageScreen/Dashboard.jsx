@@ -8,7 +8,7 @@ import CardManageListing from '../../component/CardManageListing'
 const Dashboard = () => {
   return (
     <div className='w-full min-h-screen relative' id='ds' >
-     <div className='flex w-full justify-between gap-5 items-center' >
+     <div className='flex   gap-5 items-center' >
         {
           cardDashboard.map((e, index) => (
             <CardHomeScreen

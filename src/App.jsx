@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import TableWord from './component/TableWord';
 import LayoutSidebar from './Layout/LayoutSidebar';
 import Pages from './page/pageScreen/Pages';
 import Components from './page/pageScreen/Components';
@@ -13,6 +12,7 @@ import Calenders from './page/pageScreen/Calenders';
 import Dashboard from './page/pageScreen/Dashboard';
 import { routeSubJudul } from './data/dataDami';
 import CardManageListing from './component/CardManageListing';
+import FormAboutWizard from './component/FormAboutWizard';
 
 
 const App = () => {
@@ -31,17 +31,17 @@ const App = () => {
         <Route path="/charts" element={<Charts />} />
         <Route path="/calender" element={<Calenders />} />
         {routeSubJudul.map((e, index) => (
-  e.sub_judul &&
-  e.sub_judul.map((item, subIndex) => (
-    <Route 
-      key={`${index}-${subIndex}`}
-      path={`/${item.path}`} 
-      element={React.createElement(item.judul)} 
-    />
+        e.sub_judul &&
+        e.sub_judul.map((item, subIndex) => (
+      <Route 
+          key={`${index}`}
+          path={`${item.path}`} 
+          element={React.createElement(item.judul)} 
+      />
   ))
 ))}
-
       </Route>
+      <Route path='/formAbout' element={<FormAboutWizard/>} />
     </Routes>
   );
 };

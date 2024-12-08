@@ -34,7 +34,7 @@ const TableWord = () => {
               </tbody>
             </table>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 z-10">
             <MapContainer
                 center={[0,0]} 
                 zoom={1} 
@@ -49,7 +49,7 @@ const TableWord = () => {
                   url="https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
                 />
                 <Marker position={[-6.32273185961196, 106.78118861926649]}> 
-                  <Popup>Titik di Indonesia</Popup>
+                  <Popup  >Titik di Indonesia</Popup>
                 </Marker>
               </MapContainer>
           </div>
