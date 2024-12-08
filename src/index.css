@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --map-tales-filter : contarast(2) saturate(1)
+}
+
+@media(prefers-color-scheme: dark) {
+  .map-tiles {
+    filter: var(--map-tales-filter,none);
+  }
+}
+
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -12,9 +22,71 @@
     overflow: hidden;
   }
   .accordion-open {
-    max-height: 500px;  
+    max-height: 200px; /* Atur sesuai kebutuhan konten */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 1;
   }
   .accordion-closed {
     max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
   }
+
+  .fc {
+    border: 1px solid black; /* Mengatur border di seluruh kalender */
+    border-radius: 8px; /* Opsional untuk membuat sudut membulat */
+    padding: 10px; /* Opsional untuk memberikan spasi di dalam border */
+  }
+  
+  
+
+  .sidebar-collapsed {
+    max-width: 100px; /* Width ketika sidebar mengecil */
+    transition: max-width 0.3s ease-in-out;
+  }
+  
+  .sidebar-expanded {
+    max-width: 230px; /* Width ketika sidebar membesar */
+    transition: max-width 0.3s ease-in-out;
+  }
+  
+  .content {
+    flex: 1; /* Konten akan otomatis menyesuaikan */
+    transition: margin-left 0.3s ease-in-out;
+  }
+
+/* untuk table */
+  table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Warna untuk baris ganjil */
+  }
+  table tbody tr:nth-child(even) {
+    background-color: #ffffff; /* Warna untuk baris genap */
+  }
+
+  
+
+/* unutk User Form */
+  input[type="text"]:focus ~ .input-text  {
+    @apply  -translate-y-6 -translate-x-7 scale-75 
+  }
+  input[type="text"]:focus ~ .input-text-name  {
+    @apply  -translate-y-6 -translate-x-[50px] scale-75 
+  }
+  input[type="text"]:focus ~ .input-text-bio  {
+    @apply  -translate-y-6 -translate-x-10 scale-75 
+  }
+  textarea[type="text"]:focus ~ .input-text {
+    @apply  -translate-y-6 -translate-x-[130px] scale-75 
+  }
+  
+/* untuk calender font */
+@media (max-width: 768px) {
+  .fc {
+    font-size: 0.8rem; 
+  }
+}
+
+
   

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Maps = () => {
   return (
-    <div>Maps</div>
+    <div>tes</div>
   )
 }
 
